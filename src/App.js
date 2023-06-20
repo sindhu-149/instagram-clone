@@ -166,10 +166,12 @@ function App() {
               <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
             )}
         </div>
-        <div className='app_postsRight'>
+        {user && (
+          <div className='app_postsRight'>
               <Avatar src=" " alt={user?.displayName}/>
               <p className='username'>{user?.displayName}</p>
         </div>
+        )}
       </div>
 
       {user?.displayName ? 
